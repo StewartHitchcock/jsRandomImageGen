@@ -1,0 +1,97 @@
+* {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0px;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: sans-serif;
+}
+
+.getImage {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin: 25px 0px 0px 45px;
+  cursor: pointer;
+  height: 50px;
+  width: 400px;
+  border-radius: 10px;
+  border: none;
+}
+
+.submit-btn {
+  margin: 10px 0px 0px 50px;
+  width: 100px;
+  text-align: center;
+}
+.submit-btn button {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  height: 50px;
+  width: 400px;
+  border-radius: 10px;
+  border: none;
+}
+
+header {
+  margin-top: 10px;
+  display: flex;
+}
+header h1 {
+  margin-bottom: 10px;
+}
+
+.main {
+  border: solid 1px black;
+  width: 100%;
+  height: 980px;
+  display: flex;
+}
+.main .left-ctn {
+  border: solid 1px black;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+.main .left-ctn .btn-ctn {
+  height: 800px;
+  border-bottom: solid 1px black;
+  width: 100%;
+  text-align: center;
+}
+.main .left-ctn .btn-ctn .img-ctn {
+  border-bottom: solid 1px black;
+  height: 700px;
+  width: 100%;
+}
+.main .left-ctn .btn-ctn .img-ctn img {
+  height: 650px;
+  width: 600px;
+  margin-top: 20px;
+}
+.main .left-ctn .email-form {
+  align-self: center;
+  margin-top: 50px;
+}
+.main .left-ctn .email-form input {
+  height: 50px;
+  width: 400px;
+  border-radius: 10px;
+}
+.main .right-ctn {
+  border: solid 1px black;
+  width: 25%;
+  overflow: scroll;
+  text-align: center;
+}
+.main .right-ctn img {
+  height: 350px;
+  width: 300px;
+  margin: 20px 0px 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
