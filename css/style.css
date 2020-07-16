@@ -13,7 +13,7 @@
   background-color: black;
   color: white;
   padding: 10px;
-  margin: 25px 0px 0px 45px;
+  margin: 20px 0px 0px 45px;
   cursor: pointer;
   height: 50px;
   width: 400px;
@@ -73,9 +73,36 @@ header h1 {
   width: 600px;
   margin-top: 20px;
 }
+.main .left-ctn .btn-ctn .img-ctn .warning2 {
+  border: 1px solid red;
+  border-radius: 10px;
+  justify-content: center;
+  margin-left: 1200px;
+  margin-top: 10px;
+  width: 300px;
+  height: 200px;
+  display: none;
+}
+.main .left-ctn .btn-ctn .img-ctn .warning2 p {
+  font-size: 25px;
+}
+.main .left-ctn .warning {
+  align-self: center;
+  margin-top: 10px;
+  margin-left: 49px;
+  border: solid 1px red;
+  width: 400px;
+  border-radius: 10px;
+  display: none;
+  padding: 2px;
+}
+.main .left-ctn .warning p {
+  font-size: 25px;
+  text-align: center;
+}
 .main .left-ctn .email-form {
   align-self: center;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 .main .left-ctn .email-form input {
   height: 50px;

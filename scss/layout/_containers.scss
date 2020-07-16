@@ -27,12 +27,43 @@
                     width:600px;
                     margin-top:20px;
                 }
+
+                .warning2{
+                    border: 1px solid red;
+                    border-radius: 10px;
+                    justify-content: center;
+                    margin-left: 1200px;
+                    margin-top: 10px;
+                    width: 300px;
+                    height: 200px; 
+                    display: none; 
+                p{
+                    font-size: 25px;
+                }             
+            }
+            }
+        }
+
+        .warning {
+            align-self: center;
+            margin-top: 10px;
+            margin-left: 49px;
+            border: solid 1px red;
+            width: 400px;
+            border-radius: 10px;
+            display: none;
+            padding: 2px;
+            
+            
+            p{
+                font-size: 25px;
+                text-align: center;
             }
         }
 
         .email-form{
             align-self: center;
-            margin-top: 50px;
+            margin-top: 10px;
 
             input{
                 height: 50px;
