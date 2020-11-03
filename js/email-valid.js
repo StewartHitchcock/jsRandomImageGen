@@ -7,7 +7,7 @@ var responseURL = "";
 var getImage = document.querySelector(".getImage");
 var imgCtn = document.querySelector(".img-ctn");
 var rightCtn = document.querySelector(".right-ctn");
-var rightCtnP = document.querySelector(".linknew p");
+
 var emails = [];
 
 
@@ -60,13 +60,11 @@ function warningFailAPIHide() {
 
 
 function getNewImage() {
-   console.log('hello');
    $.ajax({
       url: unsplash,
       cache: false,
       xhrFields: { responseType: "blob" },
       success: function (data) {
-         console.log('hello 2');
          var url = window.URL.createObjectURL(data);
          responseURL = url;
          imgCtn.innerHTML = "<img src = '" + url + "'>";
@@ -90,6 +88,16 @@ function enableButton() {
 }
 
 
+function includes(container, value) {
+   var returnValue = false;
+   var pos = container.indexOf(value);
+   if (pos >= 0) {
+       returnValue = true;
+   }
+   return returnValue;
+}
+
+includes(emails, emailValue);
 
 // Email validation
 
@@ -103,15 +111,25 @@ submit.addEventListener("click", function () {
    if (emailValue.match(/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/)) {
       // if(!emails.includes(emailValue)){
       // emails.push(emailValue);
-      if(!emails.indexOf(emailValue)){
-         emails.push(emailValue);
-      }
+      // test = includes(emails, emailValue);
+      // if(test === false){
+      //    emails.push(emailValue);
+      // }
       var linkNew = document.createElement("a");
-      rightCtnP = "1";
-      if(rightCtnP.value === emailValue){
+
+
+      test2 = includes(emails, emailValue);
+         console.log(test2);
+
+      if(test2 === true){
          linkNew.innerHTML = "<img src=\"" + responseURL + "\">";
+ 
       } else{
          linkNew.innerHTML = "<p> \"" + emailValue + "\" </p> <br> <img src= \"" + responseURL + "\">";
+         test = includes(emails, emailValue);
+         if(test === false){
+         emails.push(emailValue);
+         }
       }
       rightCtn.appendChild(linkNew);
       // getNewImage();
