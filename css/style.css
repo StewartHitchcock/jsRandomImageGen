@@ -69,8 +69,6 @@ header h1 {
   width: 100%;
 }
 .main .left-ctn .btn-ctn .img-ctn img {
-  height: 650px;
-  width: 600px;
   margin-top: 20px;
 }
 .main .left-ctn .btn-ctn .img-ctn .warning2 {
@@ -116,9 +114,13 @@ header h1 {
   text-align: center;
 }
 .main .right-ctn img {
-  height: 350px;
+  height: 325px;
   width: 300px;
   margin: 20px 0px 10px;
+}
+.main .right-ctn p {
+  border-top: red solid 5px;
+  padding-top: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

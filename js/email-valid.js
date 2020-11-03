@@ -1,20 +1,22 @@
 //Variables 
 
 // api
-const unsplash = "https://source.unsplash.com/random";
-let responseURL = "";
+var unsplash = "https://source.unsplash.com/650x600/";
+var responseURL = "";
 
-const getImage = document.querySelector(".getImage");
-const imgCtn = document.querySelector(".img-ctn");
-const rightCtn = document.querySelector(".right-ctn");
+var getImage = document.querySelector(".getImage");
+var imgCtn = document.querySelector(".img-ctn");
+var rightCtn = document.querySelector(".right-ctn");
+var rightCtnP = document.querySelector(".linknew p");
+var emails = [];
 
 
 // Email validation
-const submit = document.querySelector('.submit');
-const email = document.querySelector(".input");
-let emailValue = "";
-const warning = document.querySelector(".warning");
-const warningFailAPI = document.querySelector(".warning2");
+var submit = document.querySelector('.submit');
+var email = document.querySelector(".input");
+var emailValue = "";
+var warning = document.querySelector(".warning");
+var warningFailAPI = document.querySelector(".warning2");
 
 //functions
 
@@ -40,35 +42,42 @@ function warningFailAPIHide() {
 //    }
 // }
 
+// function getNewImage() {
+   
+//       fetch(unsplash)
+//          .then((response) => {
+//             responseURL = response.url;
+//             imgCtn.innerHTML = `<img src="${responseURL}">`;
+//          })
+//          .catch((response) => {
+//             warningFailAPI.style.display = "block";
+//             setTimeout(warningfailAPIHide, 5000);
+//             response;
+//          })
+   
+// }
+
+
+
 function getNewImage() {
-   
-      fetch(unsplash)
-         .then((response) => {
-            responseURL = response.url;
-            imgCtn.innerHTML = `<img src="${responseURL}">`;
-         })
-         .catch((response) => {
-            warningFailAPI.style.display = "block";
-            setTimeout(warningfailAPIHide, 5000);
-            response;
-         })
-   
+   console.log('hello');
+   $.ajax({
+      url: unsplash,
+      cache: false,
+      xhrFields: { responseType: "blob" },
+      success: function (data) {
+         console.log('hello 2');
+         var url = window.URL.createObjectURL(data);
+         responseURL = url;
+         imgCtn.innerHTML = "<img src = '" + url + "'>";
+      },
+   });
 }
 
 
 
-// function getNewImagePromise() {
-// return new Promise((resolve, reject) => { 
-//    fetch(unsplash);
 
-//    if(response.url != ""){
-//       responseURL = response.url;
-//       resolve(imgCtn.innerHTML = `<img src="${responseURL}">`);
-//    } else{
-//       reject({warningFailAPI.style.display = "block"
-//       setTimeout(warningfailAPIHide, 5000)}
-//    }
-// }
+
 
 
 
@@ -84,7 +93,7 @@ function enableButton() {
 
 // Email validation
 
-submit.addEventListener("click", () => {
+submit.addEventListener("click", function () {
 
    if(responseURL == ""){
       alert("Please click Get New Image");
@@ -92,11 +101,21 @@ submit.addEventListener("click", () => {
    emailValue = email.value;
 
    if (emailValue.match(/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/)) {
-      let linkNew = document.createElement("a");
-      linkNew.innerHTML = `<img src="${responseURL}" <br> <p>${emailValue}</p>`;
+      // if(!emails.includes(emailValue)){
+      // emails.push(emailValue);
+      if(!emails.indexOf(emailValue)){
+         emails.push(emailValue);
+      }
+      var linkNew = document.createElement("a");
+      rightCtnP = "1";
+      if(rightCtnP.value === emailValue){
+         linkNew.innerHTML = "<img src=\"" + responseURL + "\">";
+      } else{
+         linkNew.innerHTML = "<p> \"" + emailValue + "\" </p> <br> <img src= \"" + responseURL + "\">";
+      }
       rightCtn.appendChild(linkNew);
       // getNewImage();
-      // disableButton();
+      disableButton();
    } else {
       warning.style.display = "block";
       setTimeout(warningHide, 5000)
@@ -106,7 +125,7 @@ submit.addEventListener("click", () => {
 
 // Get new image
 
-getImage.addEventListener("click", () => {
+getImage.addEventListener("click", function () {
    getNewImage();
    enableButton();
 });
