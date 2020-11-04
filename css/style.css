@@ -119,8 +119,8 @@ header h1 {
   margin: 20px 0px 10px;
 }
 .main .right-ctn p {
-  border-top: red solid 5px;
-  padding-top: 15px;
+  border-top: black dashed 5px;
+  padding-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

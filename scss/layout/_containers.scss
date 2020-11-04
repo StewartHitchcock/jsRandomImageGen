@@ -79,6 +79,10 @@
         width: 25%;
         overflow:scroll;
         text-align: center;
+        
+        a{
+        
+        }
 
         img {
             height: 325px;
@@ -87,8 +91,8 @@
         }
 
         p{
-            border-top: red solid 5px;
-            padding-top: 15px;
+            border-top: black dashed 5px;
+            padding-top: 10px;
         }
 
     }
